@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using fp_web_aula_1.Controllers;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,12 +9,13 @@ namespace fp_web_aula_1
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ILogerApi, LogerApi>();
+            services.AddScoped<ILogerApi, LogerApi>();
+            services.AddScoped<INoticiaService, NoticiaService>();
             services.AddMvc();
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseMiddleware<MeuMiddleware>();
+            app.UseMeuMiddleware();
 
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();

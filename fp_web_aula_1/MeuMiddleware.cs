@@ -10,9 +10,9 @@ namespace fp_web_aula_1
         private readonly RequestDelegate _next;
         private Stopwatch inicio { get; set; }
 
-        public MeuMiddleware(RequestDelegate next, ILogerApi loger)
+        public MeuMiddleware(RequestDelegate next)
         {
-            _loggerApi = loger;
+            _loggerApi = new LogerApi();
             _next = next;
         }
         
