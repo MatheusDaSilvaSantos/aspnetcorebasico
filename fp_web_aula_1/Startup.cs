@@ -17,6 +17,8 @@ namespace fp_web_aula_1
         {
             app.UseMeuMiddleware();
 
+            app.UseStaticFiles();
+
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
