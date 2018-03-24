@@ -21,7 +21,7 @@ namespace fp_web_aula_1.ViewComponents
             if (noticiasUrgentes)
                 view = "noticiasurgentes";
 
-            var noticias = _noticiaService.List().Take(total);
+            var noticias = _noticiaService.List().Take(total).ToList();
 
             return View(view, noticias);
         }
