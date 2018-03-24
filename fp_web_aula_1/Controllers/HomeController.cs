@@ -7,6 +7,11 @@ namespace fp_web_aula_1.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(ILogerApi log)
+        {
+
+        }
+
         public IActionResult Index()
         {
             ViewBag.Mensagem = "Hello";
