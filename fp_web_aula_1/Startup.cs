@@ -1,6 +1,8 @@
 ﻿using fp_web_aula_1.Controllers;
+using fp_web_aula_1.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace fp_web_aula_1
@@ -9,8 +11,12 @@ namespace fp_web_aula_1
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ILogerApi, LogerApi>();
+            services.AddScoped<ILoggerApi, LoggerApi>();
             services.AddScoped<INoticiaService, NoticiaService>();
+            var connection =
+    @"Server=(localdb)\mssqllocaldb;Database=EFGetStarted.AspNetCore.NewDb;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<CopaContext>(options => options.UseSqlServer(connection));
+
             services.AddMvc();
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

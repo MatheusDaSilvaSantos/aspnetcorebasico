@@ -4,9 +4,9 @@ namespace fp_web_aula_1.Controllers
 {
     public class NoticiaService : INoticiaService
     {
-        private ILogerApi _log;
+        private ILoggerApi _log;
 
-        public NoticiaService(ILogerApi logerApi)
+        public NoticiaService(ILoggerApi logerApi)
         {
             _log = logerApi;
         }

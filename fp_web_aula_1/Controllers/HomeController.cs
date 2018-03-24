@@ -8,10 +8,10 @@ namespace fp_web_aula_1.Controllers
     public class HomeController : Controller
     {
         private const int TotalTime = 2;
-        private ILogerApi _log;
+        private ILoggerApi _log;
         private INoticiaService _noticiaService;
 
-        public HomeController(ILogerApi log, INoticiaService noticiaService)
+        public HomeController(ILoggerApi log, INoticiaService noticiaService)
         {
             _log = log;
             _noticiaService = noticiaService;

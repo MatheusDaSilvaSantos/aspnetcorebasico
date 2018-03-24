@@ -6,13 +6,13 @@ namespace fp_web_aula_1
 {
     public class MeuMiddleware
     {
-        private readonly ILogerApi _loggerApi;
+        private readonly ILoggerApi _loggerApi;
         private readonly RequestDelegate _next;
         private Stopwatch inicio { get; set; }
 
         public MeuMiddleware(RequestDelegate next)
         {
-            _loggerApi = new LogerApi();
+            _loggerApi = new LoggerApi();
             _next = next;
         }
         

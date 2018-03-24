@@ -2,7 +2,7 @@
 
 namespace fp_web_aula_1
 {
-    public interface ILogerApi
+    public interface ILoggerApi
     {
         void Log(HttpContext context, long totalTime);
     }

@@ -3,11 +3,11 @@ using System;
 
 namespace fp_web_aula_1
 {
-    public class LogerApi : ILogerApi
+    public class LoggerApi : ILoggerApi
     {
         private Guid guid;
 
-        public LogerApi()
+        public LoggerApi()
         {
             guid = Guid.NewGuid();
         }
